@@ -1,0 +1,12 @@
+---
+- name : start and stop service
+  hosts : webserver
+  tasks : 
+
+     - service : name = postgresql state = started
+       when : ansible_host == "node1"
+
+     - service : name = sshd state = restarted
+      when : ansible_hosts == "node2"
+
+

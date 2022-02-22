@@ -1,0 +1,9 @@
+--- #roles playybook
+- hosts: webservers
+  user: ansible
+  become: yes
+  connection : ssh
+  roles: 
+         - webserver
+
+

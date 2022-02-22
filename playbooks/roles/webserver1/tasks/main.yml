@@ -1,0 +1,20 @@
+---
+# tasks file for webserver1
+ # tasks file for webserver
+ - name: Installing Apache Server
+   yum: name=httpd state=latest
+   tags:
+    - installapache
+ - name: Start Apache server service
+   service: name=httpd state=started
+   tags:
+    - startapache
+  - name: Copy Index file
+   copy: src=/source/index.html dest=/var/www/html/
+   tags:
+    - copyfile
+ - name: Restrat web service
+   service: name=httpd state=started
+   tags:
+    - always
+

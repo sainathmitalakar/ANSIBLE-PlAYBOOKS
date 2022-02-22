@@ -1,0 +1,25 @@
+---
+# tasks file for install
+ - name: Installing Apache , MYSQL DB Communitiy edition & PHP
+   yum:
+     name:
+       - htppd
+       - mysql-community-server
+       - mysql-community-client
+       - php
+       - php-mysql
+     state: installed
+
+ - name: Enabling httpd service and start the service
+   service: 
+     name: httpd
+     enabled: yes
+     state: started
+
+ - name: Enabling mysql service and start the service
+   service:
+     name: mysql
+     enabled: yes
+     state: started
+
+

@@ -1,0 +1,12 @@
+--- # register module
+- hosts: webservers
+  user: ansible
+  become: yes
+  tasks:
+     - name: List all files and directories in /home/ansible
+       shell: ls /home/ansible
+       register: dir_contents
+     - name: Print directory contents using loops
+       debug:
+          msg: "{{ item }}"
+          loop: "{{ dir_contents.stdout_lines }}"

@@ -1,0 +1,14 @@
+---
+ - hosts: demo
+   vars:
+     port_no: 80
+     pkg_name: httpd
+
+   gather_facts: no
+   tasks:
+   - debug:
+       msg:
+        - "The value of port is {{ port_no }}"
+        - "The value of pkg is {{ pkg_name }}"
+        - "The value of hostname is {{ inventory_hostname }}"
+        - "Ansible version is {{ ansible_version }}"

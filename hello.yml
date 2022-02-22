@@ -1,0 +1,12 @@
+---
+
+- name: simple variable1
+  hosts: webservers
+  vars:
+  hello: hello world
+  tasks:
+    -  name: Ansible Basic Variable Example1
+       debug:
+        msg: "{{ hello }}"
+
+...

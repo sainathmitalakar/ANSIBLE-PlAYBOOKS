@@ -1,0 +1,10 @@
+---
+ - name : create a soft link file
+   hosts : webservers
+   tasks :
+       - name : create a softlink
+         file :
+             src : /etc/fstab
+             dest : /root/softlink
+             state : link
+

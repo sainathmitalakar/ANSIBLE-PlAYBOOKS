@@ -1,0 +1,9 @@
+---
+- name: update pkg
+  hosts: webservers
+  tasks:
+      - name: update httpd pkg
+        yum:
+           name: httpd
+           state: latest
+

@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+user: ansible
+become: yes
+connection: ssh
+tasks:
+- name: "creating directory"
+command: mkdir /home/ansible/ansible-test creates=/home/ansible/ansible-test
+register: result
+- debug: msg="{{ result.stdout }}"i

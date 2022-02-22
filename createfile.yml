@@ -1,0 +1,12 @@
+---
+- name: to create a file
+  hosts : webservers
+  tasks:
+     - name: file create
+       file:
+          path: /tmp/ansible100.txt
+          state: touch
+          mode: 666
+          owner: ansible
+          group: ansible
+

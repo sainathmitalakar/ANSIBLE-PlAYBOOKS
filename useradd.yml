@@ -1,0 +1,15 @@
+---
+ - name: add user 
+   hosts: webservers
+   tasks: 
+         - name: Add user testuser1
+           ansible.builtin.user:
+           name: "testuser1"
+           state: present
+           groups: "ansible"
+
+         - name: Add user testuser2
+           ansible.builtin.user:
+           name: "testuser2"
+           state: present
+           groups: "ansible"

@@ -1,0 +1,13 @@
+---
+- name: create users
+  hosts: webservers
+  tasks: 
+    - name: create a user all machine
+      user: 
+        name: sainath
+        uid: 2022
+        state: present
+        shell: /bin/false
+        group: ansible
+        comment: user for ftp
+        home: /tmp/ansible 

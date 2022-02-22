@@ -1,0 +1,8 @@
+---
+- name: install pkg
+  hosts: webservers
+  tasks: 
+      - name: install httpd pkg
+        yum: 
+           name: httpd
+           state: present

@@ -1,0 +1,16 @@
+---
+- name: Ansible register Module example 2
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Find video files
+      shell: "find *.mov"
+      args:
+        chdir: "/home/ansible_user/ansible/register_module/downloads"
+      register: file_output
+    - shell: "rm -rf {{ item }}"
+      args:
+        chdir: "/home/ansible_user/ansible/register_module/downloads"
+      with_items:
+        - "{{ file_output.stdout_lines }}"
+

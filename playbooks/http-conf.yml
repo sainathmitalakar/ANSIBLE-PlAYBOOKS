@@ -1,0 +1,6 @@
+---
+ - name: Configure http server
+   hosts: webservers
+   become: yes
+   roles: 
+      - http

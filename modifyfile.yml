@@ -1,0 +1,7 @@
+---
+- name: add new entry
+  hosts: demo
+  task: 
+        - name: "add entry"
+     
+              content: "welcome to enfec"

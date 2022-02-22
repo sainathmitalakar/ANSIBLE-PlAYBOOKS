@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  tasks:
+   - name: Ansible register variable basic example
+     shell: "find *.txt"
+     args:
+      chdir: "/home/ansible"
+      register: find_output
+
+   - debug:
+        var: find_output

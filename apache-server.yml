@@ -1,0 +1,22 @@
+--- 
+- name: "configure apache web server"
+  hosts: webservers
+  become: true
+  tasks: 
+         - name: httpd
+           state: latest
+           yum: ~
+         - copy: ~
+           dest: /var/index.html
+           name: "copy index.html file"
+           src: files/index.html
+         - enabled: true
+           name: httpd
+           service: ~
+           state: started
+         - firewalld: ~
+           immediate: true
+         - name: "to allow httpd service"
+           permanent: true
+           service: http
+           state: enabled

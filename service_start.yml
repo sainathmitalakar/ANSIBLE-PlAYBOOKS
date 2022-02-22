@@ -1,0 +1,22 @@
+---
+ - name : running the services
+   hosts : demo
+   vars : 
+   web_service : httpd
+   ftp_service : vsftpd
+    tasks :
+      - name : The {{ web_service }} service is started and enabled
+        service :
+            name : "{{ web_service}}" 
+            enabled : true
+            state : started
+        - name : The {{ ftp_service }} service is started and enabled
+        service :
+            name : "{{ ftp_service }}"
+            enabled : true
+            state : started
+    become : true
+...
+
+
+

@@ -1,0 +1,18 @@
+--- 
+#Testing 
+
+- hosts: all
+
+   vars:
+
+      test1: "Hello sainath"
+
+   tasks:
+
+      - name: Testing Ansible variable
+
+          debug:
+
+          msg: "Equals"
+
+          when: test1 == "Hello sainath" 

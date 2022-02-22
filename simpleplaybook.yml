@@ -1,0 +1,17 @@
+--- 
+  Fruits:
+
+       - "Mango Strawberry Banana Grapes Apple"
+
+
+    #a directory is represented in a simple key : value from
+
+   #details of customer
+
+   Customer:
+
+       Name: Sainath
+       JOB: Trainee
+       Skill: DevOps
+       Exp: Fresher
+

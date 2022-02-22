@@ -1,0 +1,12 @@
+--- # ansible debug module , register
+- hosts: webservers
+  tasks:
+     - name: executing sample command
+       shell: uptime
+       register: result
+
+
+
+            name: printing variable
+              debug:
+              msg: "{{result}}"
