@@ -1,0 +1,22 @@
+---
+ - name: This play to show how works handlers
+   hosts: webservers
+   become: true
+   gather_facts: no
+   tasks: 
+      - name: install the httpd pkg
+        yum: 
+           name: httpd
+           state: latest
+
+      - name: copy index.html file
+        copy: 
+          src: files/index.html
+          dest: /var/www/html/
+        notify: restart service httpd
+        
+   handlers:
+      - name: restart service httpd
+        service: 
+          name: httpd
+          state: restarted 
